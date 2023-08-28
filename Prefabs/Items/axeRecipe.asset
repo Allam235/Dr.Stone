@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8db7c82c04bc4088f4a5cd54fdaa7, type: 3}
+  m_Name: axeRecipe
+  m_EditorClassIdentifier: 
+  name: Axe Recipe
+  icon: {fileID: 21300000, guid: 4663b764f6c017f428c86fdca4627846, type: 3}
+  itemDescription: Used for crafting
+  player: {fileID: 0}
+  nitricAcid: {fileID: 0}
+  result: {fileID: 11400000, guid: 1002c5fdc55e1424194230352830143e, type: 2}
+  ingredients:
+  - item: {fileID: 11400000, guid: ec8c8daa368e60046be3daa4abb886c6, type: 2}
+    amount: 2
+  - item: {fileID: 11400000, guid: 0cbcec6840a59bd4c8d3a9f057ef97ea, type: 2}
+    amount: 1
