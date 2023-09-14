@@ -24,7 +24,10 @@ public class GameManager : MonoBehaviour
     public Transform hotbarTransform;
     public Transform inventoryTransform;
     public BoxCollider2D player;
-    public BoxCollider2D nitricAcid;
+    public BoxCollider2D nitricAcidPool;
+    public Item nitricAcid;
+    public BoxCollider2D trees;
+    public Item wood;
 
 
     private void Update()
@@ -35,9 +38,27 @@ public class GameManager : MonoBehaviour
             Inventory.instance.AddItem(Instantiate(newItem));
         }
 
-        if(player.IsTouching(nitricAcid)){
-            Debug.Log("Touching");
+        
+    }
+
+    public void useBottle()
+    {
+        if (player.IsTouching(nitricAcidPool))
+        {
+            Inventory.instance.AddItem(nitricAcid);
+            Debug.Log("Aquired Nitric Acid");
         }
+
+    }
+
+    public void useAxe()
+    {
+        if (player.IsTouching(trees))
+        {
+            Inventory.instance.AddItem(wood);
+            Debug.Log("Aquired Wood");
+        }
+
     }
 
     public Item RandomItem(){

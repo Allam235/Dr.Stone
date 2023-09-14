@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c7d3b00b156f244fb38fdb1494ecad7, type: 3}
   m_Name: nitricAcid
   m_EditorClassIdentifier: 
-  name: Defulat Item
-  icon: {fileID: 0}
+  name: Nitric Acid
+  icon: {fileID: 21300000, guid: db005d11213e5da47b9769c2e6c56eee, type: 3}
   itemDescription: Used for crafting
-  player: {fileID: 0}
-  nitricAcid: {fileID: 0}
