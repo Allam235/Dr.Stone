@@ -9,21 +9,44 @@ public class Item : ScriptableObject
     new public string name = "Defulat Item";
     public Sprite icon = null;
     public string itemDescription = "Used for crafting";
+    public int durability = -1;
     //public BoxCollider2D player;
     //public BoxCollider2D nitricAcid;
+
+    public void Awake()
+    {
+        Debug.Log(name);
+        if (name.Equals("Axe")) 
+        {
+            durability = 4;
+        }
+        if (name.Equals("Bottle"))
+        {
+            durability = 2;
+        }
+    }
 
     public virtual void Use(bool hotbar)
     {
         Debug.Log("Using " + name);
         if(name.Equals("Bottle"))
         {
-            GameManager.instance.useBottle();
             
+            if (GameManager.instance.useBottle())
+            {
+                durability--;
+                Inventory.instance.check();
+            }
+
 
         }
         else if (name.Equals("Axe"))
         {
-            GameManager.instance.useAxe();
+            if (GameManager.instance.useAxe())
+            {
+                durability--;
+                Inventory.instance.check();
+            }
             
 
         }
@@ -43,7 +66,15 @@ public class Item : ScriptableObject
 
     public virtual string GetItemDescription()
     {
-        return itemDescription;
+        Debug.Log(durability);
+        if (durability == -1)
+        {
+            return itemDescription;
+        }
+        Debug.Log(itemDescription + " Durability: " + durability);
+        return itemDescription + " Durability: " + durability;
+        
+        
     }
 
     public virtual string GetName()

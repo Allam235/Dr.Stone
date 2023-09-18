@@ -26,6 +26,29 @@ public class Inventory : MonoBehaviour
     public List<Item> hotbarItemList = new List<Item>();
     public HotbarController hotbarController;
 
+
+    public void check()
+    {
+        for (int i = 0; i< inventoryItemList.Count; i++)
+        {
+            if (inventoryItemList[i].durability == 0)
+            {
+                inventoryItemList.RemoveAt(i);
+                onItemChange.Invoke();
+                return;
+            }
+        }
+        for (int i = 0;i< hotbarItemList.Count; i++)
+        {
+            if (hotbarItemList[i].durability == 0)
+            {
+                hotbarItemList.RemoveAt(i);
+                onItemChange.Invoke();
+                return;
+            }
+        }
+    }
+
     public void SwitchHotbarInventory(Item item, bool hotbar)
     {
 
@@ -68,7 +91,7 @@ public class Inventory : MonoBehaviour
 
      public void AddItem(Item item)
     {
-        inventoryItemList.Add(item);
+        inventoryItemList.Add(Instantiate(item));
         onItemChange.Invoke();
     }
 

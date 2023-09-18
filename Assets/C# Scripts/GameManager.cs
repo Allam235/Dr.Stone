@@ -36,28 +36,33 @@ public class GameManager : MonoBehaviour
         {
             Item newItem = itemList[Random.Range(0, itemList.Count)];
             Inventory.instance.AddItem(Instantiate(newItem));
+            
         }
 
         
     }
 
-    public void useBottle()
+    public bool useBottle()
     {
         if (player.IsTouching(nitricAcidPool))
         {
             Inventory.instance.AddItem(nitricAcid);
             Debug.Log("Aquired Nitric Acid");
+            return true;
         }
+        return false;
 
     }
 
-    public void useAxe()
+    public bool useAxe()
     {
         if (player.IsTouching(trees))
         {
             Inventory.instance.AddItem(wood);
             Debug.Log("Aquired Wood");
+            return true;
         }
+        return false;
 
     }
 
