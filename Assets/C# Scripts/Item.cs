@@ -13,18 +13,7 @@ public class Item : ScriptableObject
     //public BoxCollider2D player;
     //public BoxCollider2D nitricAcid;
 
-    public void Awake()
-    {
-        Debug.Log(name);
-        if (name.Equals("Axe")) 
-        {
-            durability = 4;
-        }
-        if (name.Equals("Bottle"))
-        {
-            durability = 2;
-        }
-    }
+    
 
     public virtual void Use(bool hotbar)
     {
