@@ -24,7 +24,7 @@ public class Item : ScriptableObject
             if (GameManager.instance.useBottle())
             {
                 durability--;
-                Inventory.instance.check();
+                Inventory.instance.check(); //checks if any items need to be deleted due to durability
             }
 
 
@@ -34,7 +34,7 @@ public class Item : ScriptableObject
             if (GameManager.instance.useAxe())
             {
                 durability--;
-                Inventory.instance.check();
+                Inventory.instance.check(); //checks if any items need to be deleted due to durability
             }
             
 
