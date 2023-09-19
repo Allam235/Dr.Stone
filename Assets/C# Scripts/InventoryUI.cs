@@ -10,6 +10,7 @@ public class InventoryUi : MonoBehaviour
     public GameObject inventoryTab;
     public GameObject craftingTab;
 
+
     public List<ItemSlot> itemSlotList = new List<ItemSlot>();
 
     public GameObject inventorySlotPrefab;
@@ -123,20 +124,23 @@ public class InventoryUi : MonoBehaviour
 
     private void OpenInventory()
     {
+        InventorySlide.instance.SlideOut();
         ChangeCursorState(false);
         inventoryOpen = true;
-        inventoryParent.SetActive(true);
+        //inventoryParent.SetActive(true);
     }
 
     private void CloseInventory()
     {
+        InventorySlide.instance.SlideIn();
         ChangeCursorState(true);
         inventoryOpen = false;
-        inventoryParent.SetActive(false);
+        //inventoryParent.SetActive(false);
     }
 
     public void OnCraftingTabClicked()
     {
+        
         craftingTab.SetActive(true);
         inventoryTab.SetActive(false);
     }
