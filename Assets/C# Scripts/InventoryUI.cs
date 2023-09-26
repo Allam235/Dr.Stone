@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class InventoryUi : MonoBehaviour
 {
+
+    #region singleton
+
+    public static InventoryUi instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    #endregion
+
+
     private bool inventoryOpen = false;
     public bool InventoryOpen => inventoryOpen;
     public GameObject inventoryParent;
     public GameObject inventoryTab;
     public GameObject craftingTab;
+    public GameObject inventory;
 
 
     public List<ItemSlot> itemSlotList = new List<ItemSlot>();
@@ -29,19 +45,6 @@ public class InventoryUi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (inventoryOpen)
-            {
-                //close inventory
-                CloseInventory();
-            }
-            else
-            {
-                //openInventory
-                OpenInventory();
-            }
-        }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -121,22 +124,27 @@ public class InventoryUi : MonoBehaviour
         }
     }
 
-
-    private void OpenInventory()
+    public void OnClickInventory()
     {
-        InventorySlide.instance.SlideOut();
-        ChangeCursorState(false);
-        inventoryOpen = true;
-        //inventoryParent.SetActive(true);
+        Debug.Log(transform.position.x + ", " + transform.position.y);
+        if (inventoryOpen == true)
+        {
+            inventory.transform.LeanMoveLocal(new Vector2(-642, 35), 1);
+            inventoryOpen = false;
+            Debug.Log("Slided out");
+        }
+        else if (inventoryOpen == false)
+        {
+            inventory.transform.LeanMoveLocal(new Vector2(-240, 35), 1);
+            inventoryOpen = true;
+            Debug.Log("Slided in");
+        }
+        else
+        {
+            Debug.Log("sliding failed");
+        }
     }
 
-    private void CloseInventory()
-    {
-        InventorySlide.instance.SlideIn();
-        ChangeCursorState(true);
-        inventoryOpen = false;
-        //inventoryParent.SetActive(false);
-    }
 
     public void OnCraftingTabClicked()
     {
@@ -151,18 +159,6 @@ public class InventoryUi : MonoBehaviour
         inventoryTab.SetActive(true);
     }
 
-    private void ChangeCursorState(bool lockCursor)
-    {
-        if (lockCursor)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-    }
+  
 
 }
