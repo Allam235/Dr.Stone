@@ -12,7 +12,6 @@ public class Item : ScriptableObject
     public int durability = -1;
     //public BoxCollider2D player;
     //public BoxCollider2D nitricAcid;
-
     
 
     public virtual void Use(bool hotbar)

@@ -83,8 +83,8 @@ public class GameManager : MonoBehaviour
             Destroy(currentItemInfo.gameObject);
         }
 
-        buttonPos.x -= 125;
-        buttonPos.y += 5;
+        buttonPos.x += 110;
+        buttonPos.y += 15;
 
         currentItemInfo = Instantiate(itemInfoPrefab, buttonPos, Quaternion.identity, canvas);
         currentItemInfo.GetComponent<ItemInfo>().SetUp(itemName, itemDescription);

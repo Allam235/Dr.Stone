@@ -51,7 +51,8 @@ public class Inventory : MonoBehaviour
 
     public void SwitchHotbarInventory(Item item, bool hotbar)
     {
-
+        Debug.Log(item.GetName()); ;
+        Debug.Log(hotbar);
         if(hotbar){
             foreach(Item i in hotbarItemList)
             {
@@ -78,7 +79,7 @@ public class Inventory : MonoBehaviour
                     {
                         hotbarItemList.Add(item);
                         inventoryItemList.Remove(item);
-                            onItemChange.Invoke();
+                        onItemChange.Invoke();
                     }
                     return;
                 }

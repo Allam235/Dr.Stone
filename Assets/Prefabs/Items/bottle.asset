@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bottle
   icon: {fileID: 21300000, guid: e4e1e9ab8aad1444faeba8b0b9a7d765, type: 3}
+  itemDescription: Used for crafting
+  durability: 5

@@ -19,12 +19,20 @@ public class InventoryUi : MonoBehaviour
     #endregion
 
 
+
+    public int xi;
+    public int xo;
+    public int yi;
+    public int yo;
+
     private bool inventoryOpen = false;
     public bool InventoryOpen => inventoryOpen;
+    private bool craftingOpen = false;
     public GameObject inventoryParent;
     public GameObject inventoryTab;
     public GameObject craftingTab;
     public GameObject inventory;
+    public GameObject crafting;
 
 
     public List<ItemSlot> itemSlotList = new List<ItemSlot>();
@@ -79,25 +87,8 @@ public class InventoryUi : MonoBehaviour
             //Add more item slots
             AddItemSlots(currentItemCount);
         }
-/*
-        for(int i = 0; i < itemslotList.Count; ++i){
-            if(Inventory.instance.inventoryItemList[i].name.Equals(itemslotList.item.name)){
-                itemSlotList[i].AddItem(Inventory.instance.inventoryItemList[i]);
-            }
-        }
-        for(int i = 0; ++i){
-            if(!Inventory.instance.inventoryItemList[i].name.Equals(itemslotList.item.name)){
-                itemSlotList[i].AddItem(Inventory.instance.inventoryItemList[i]);
-            }
-        }
-*/ 
-
-
-
-
         for(int i = 0; i < itemSlotList.Count; ++i)
         {
-            Debug.Log(i);
             if(i < currentItemCount)
             {
                 //update the current item in the slot
@@ -137,6 +128,27 @@ public class InventoryUi : MonoBehaviour
         {
             inventory.transform.LeanMoveLocal(new Vector2(-240, 35), 1);
             inventoryOpen = true;
+            Debug.Log("Slided in");
+        }
+        else
+        {
+            Debug.Log("sliding failed");
+        }
+    }
+
+    public void OnClickCrafting()
+    {
+        Debug.Log(crafting.transform.position.x + ", " + crafting.transform.position.y);
+        if (craftingOpen == true)
+        {
+            crafting.transform.LeanMoveLocal(new Vector2(582, 35), 1);
+            craftingOpen = false;
+            Debug.Log("Slided out");
+        }
+        else if (craftingOpen == false)
+        {
+            crafting.transform.LeanMoveLocal(new Vector2(205, 35), 1);
+            craftingOpen = true;
             Debug.Log("Slided in");
         }
         else

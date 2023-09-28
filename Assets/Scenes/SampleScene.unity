@@ -1439,6 +1439,7 @@ MonoBehaviour:
   inventoryParent: {fileID: 1269904954}
   inventoryTab: {fileID: 1645475448}
   craftingTab: {fileID: 1200387602}
+  inventory: {fileID: 0}
   itemSlotList: []
   inventorySlotPrefab: {fileID: 6077269365229296373, guid: 03826581555911843a6d6a358be59b79, type: 3}
   craftingSlotPrefab: {fileID: 6077269365229296373, guid: e9ba6d0e6892ce6408acc468371711ee, type: 3}
@@ -10825,7 +10826,6 @@ GameObject:
   - component: {fileID: 1269904955}
   - component: {fileID: 1269904957}
   - component: {fileID: 1269904956}
-  - component: {fileID: 1269904958}
   m_Layer: 5
   m_Name: InventoryParent
   m_TagString: Untagged
@@ -10893,20 +10893,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269904954}
   m_CullTransparentMesh: 1
---- !u!114 &1269904958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269904954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8f73b0afea6ee4b96a121e2683fb58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  x: 0
-  y: 0
 --- !u!1 &1287532516
 GameObject:
   m_ObjectHideFlags: 0

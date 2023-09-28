@@ -15,5 +15,4 @@ MonoBehaviour:
   name: Axe
   icon: {fileID: 21300000, guid: 4663b764f6c017f428c86fdca4627846, type: 3}
   itemDescription: Used for crafting
-  player: {fileID: 0}
-  nitricAcid: {fileID: 0}
+  durability: 3
