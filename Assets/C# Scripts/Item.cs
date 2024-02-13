@@ -38,6 +38,15 @@ public class Item : ScriptableObject
             
 
         }
+        else if (name.Equals("High"))
+        {
+            GameManager.instance.speed(30f);
+            durability--;
+            Inventory.instance.check(); //checks if any items need to be deleted due to durability
+           
+
+
+        }
         /*
         if(name.Equals("bottle") && player.IsTouching(nitricAcid)){
             Debug.Log("Aquired Nitric Acid");

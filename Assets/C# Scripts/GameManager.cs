@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public Item nitricAcid;
     public BoxCollider2D trees;
     public Item wood;
+    public Player_Movement movement;
 
 
     private void Update()
@@ -63,6 +64,13 @@ public class GameManager : MonoBehaviour
             return true;
         }
         return false;
+
+    }
+
+    public void speed(float increase)
+    {
+        movement.moveSpeed += increase;
+        Debug.Log("Increased speed");
 
     }
 

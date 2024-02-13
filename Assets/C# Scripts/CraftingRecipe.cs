@@ -8,7 +8,6 @@ public class CraftingRecipe : Item
 {
     public Item result;
     public Ingredient[] ingredients;
-    private int durability;
 
 
     private bool CanCraft()

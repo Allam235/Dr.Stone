@@ -1516,6 +1516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 666430077}
   - component: {fileID: 666430076}
+  - component: {fileID: 666430078}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1552,6 +1553,7 @@ MonoBehaviour:
   nitricAcid: {fileID: 11400000, guid: 6f3d491683fa9a547a34bd0777a3dc68, type: 2}
   trees: {fileID: 495242357}
   wood: {fileID: 11400000, guid: 0cbcec6840a59bd4c8d3a9f057ef97ea, type: 2}
+  movement: {fileID: 666430078}
 --- !u!4 &666430077
 Transform:
   m_ObjectHideFlags: 0
@@ -1567,6 +1569,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &666430078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666430075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112b666da00ed264d9e9adaaef58fda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 15
+  rb: {fileID: 1987288483}
+  animator: {fileID: 1987288485}
 --- !u!1001 &675017290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1982,7 +1999,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761022270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.33104, y: -108.24781, z: -1.3378223}
+  m_LocalPosition: {x: -39.39, y: -108.5, z: -1.3378223}
   m_LocalScale: {x: 20.156507, y: 3.972095, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2027,8 +2044,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 551929493
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -302448304, guid: fa9008ba27d044823835d85918621932, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6514,6 +6531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryItemList:
   - {fileID: 11400000, guid: c6183232e9848b04f9ce041e95520090, type: 2}
+  - {fileID: 11400000, guid: 0b137c84e434b5549b231f3331632ae4, type: 2}
   hotbarItemList: []
   hotbarController: {fileID: 0}
 --- !u!4 &1255166374
@@ -14792,7 +14810,6 @@ GameObject:
   - component: {fileID: 1987288487}
   - component: {fileID: 1987288486}
   - component: {fileID: 1987288485}
-  - component: {fileID: 1987288484}
   - component: {fileID: 1987288483}
   - component: {fileID: 1987288482}
   m_Layer: 0
@@ -14874,21 +14891,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1987288484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987288481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 112b666da00ed264d9e9adaaef58fda8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 15
-  rb: {fileID: 1987288483}
-  animator: {fileID: 1987288485}
 --- !u!95 &1987288485
 Animator:
   serializedVersion: 5
