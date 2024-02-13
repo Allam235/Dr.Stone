@@ -6531,7 +6531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryItemList:
   - {fileID: 11400000, guid: c6183232e9848b04f9ce041e95520090, type: 2}
-  - {fileID: 11400000, guid: 0b137c84e434b5549b231f3331632ae4, type: 2}
+  - {fileID: 11400000, guid: 543a6b0b616c8f848af22ce51383172f, type: 2}
   hotbarItemList: []
   hotbarController: {fileID: 0}
 --- !u!4 &1255166374
